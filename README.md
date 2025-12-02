@@ -1,7 +1,10 @@
 Pošto mi po defaultu svi korisnici dobivaju ulogu/role student, napravio sam administratora putem php artisan tinkera.
+
 <br>
-Ispod se nalazi primjer za kreiranje admina u tinker-u za moju konkretnu tablicu u bazi korisnika "users" (iako sam stavio i sqlite datoteku unutar foldera database pa se tablica može vidjeti i tamo da biste znali unjeti podatke):
+Ispod se nalazi primjer za kreiranje admina u tinker-u za moju konkretnu tablicu u bazi korisnika "users" 
+(iako sam stavio i sqlite datoteku unutar foldera database pa se tablica može vidjeti i tamo da biste znali unjeti podatke):
 <br>
+
 $user = new \App\Models\User();
 <br>
 $user->name = 'Admin_Ime';
@@ -13,6 +16,7 @@ $user->password = bcrypt('lozinka');
 $user->role = 'admin';
 <br>
 $user->save();
+
 <br>
 Dodao sam ovo za svaki slučaj da ne biste mislili da nemam druge roles u aplikaciji osim studenata.
 <br>
