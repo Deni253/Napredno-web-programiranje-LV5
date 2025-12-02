@@ -1,3 +1,26 @@
+Pošto mi po defaultu svi korisnici dobivaju ulogu/role student, napravio sam administratora putem php artisan tinkera.
+<br>
+On tek tada može dodjeljivati i mijenjati uloge po želji
+<br>
+Ispod se nalazi primjer za kreiranje admina u tinker-u za moju konkretnu tablicu u bazi korisnika "users" (iako sam stavio i sqlite datoteku unutar foldera database pa se tablica može vidjeti i tamo da biste znali unjeti podatke):
+<br>
+$user = new \App\Models\User();
+<br>
+$user->name = 'Admin_Ime';
+<br>
+$user->email = 'admin@example.com';
+<br>
+$user->password = bcrypt('lozinka');
+<br>
+$user->role = 'admin';
+<br>
+$user->save();
+<br>
+Dodao sam dodao za svaki slučaj da ne biste mislili da nemam druge roles u aplikaciji osim studenata
+<br>
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
